@@ -21,9 +21,40 @@
     - To make a result more trustworthy, we supports GPS (consumer-level price, such as U-Blox EVK-7P)-based altitude stabilization. The LOAM family of methods are known to be susceptible to z-errors in outdoors. We used the robust loss for only the altitude term. For the details, see the variable `robustGPSNoise` in the `laserPosegraphOptimization.cpp` file. 
 
 ## Prerequisites (dependencies)
-- We mainly depend on ROS, Ceres (for A-LOAM), and GTSAM (for pose-graph optimization). 
-    - For the details to install the prerequisites, please follow the A-LOAM and LIO-SAM repositiory. 
-- The below examples are done under ROS melodic (ubuntu 18) and GTSAM version 4.x. 
+The main dependencies are CERES,GTSAM and Opencv2. We assume that you have a fresh install of Linux with Ros Noetic installed[http://wiki.ros.org/noetic/Installation/Ubuntu]. 
+
+### Ceres:
+```
+    sudo apt-get install cmake
+    sudo apt-get install libgoogle-glog-dev libgflags-dev
+    sudo apt-get install libatlas-base-dev
+    sudo apt-get install libeigen3-dev
+    sudo apt-get install libsuitesparse-dev
+```
+Download the source files for Ceres[http://ceres-solver.org/ceres-solver-2.1.0.tar.gz]
+```
+    cd Downloads
+    tar zxf ceres-solver-2.1.0.tar.gz
+    mv ceres-solver-2.1.0 /home && cd
+    mkdir ceres-bin && cd ceres-bin
+    cmake -DEXPORT_BUILD_DIR="ON" ../ceres-solver-2.1.0
+    make -j16
+    make install
+```
+
+### GTSAM
+```
+    sudo add-apt-repository ppa:borglab/gtsam-develop
+    sudo apt install libgtsam-dev libgtsam-unstable-dev
+```
+### OpenCV2
+
+```
+    sudo apt install libopencv-dev python3-opencv
+```
+
+You should now have everything ready to build your ROS workspace. 
+
 
 ## How to use? 
 - First, install the abovementioned dependencies, and follow below lines. 

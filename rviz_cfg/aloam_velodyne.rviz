@@ -362,7 +362,7 @@ Visualization Manager:
       Radius: 0.30000001192092896
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /aft_pgo_path
+      Topic: aft_pgo_path
       Unreliable: false
       Value: true
     - Angle Tolerance: 0.10000000149011612
@@ -396,7 +396,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Axes
-      Topic: /aft_pgo_odom
+      Topic: aft_pgo_odom
       Unreliable: false
       Value: false
     - Alpha: 0.5
@@ -424,7 +424,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.10000000149011612
       Style: Points
-      Topic: /aft_pgo_map
+      Topic: aft_pgo_map
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
